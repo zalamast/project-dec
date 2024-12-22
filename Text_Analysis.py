@@ -40,6 +40,3 @@ class TextAnalysisWindow(CTk):
         self._title_label.grid(row=0, column=0, padx=10, pady=5)
         self.Textbox.grid(row=1, column=0, padx=10, pady=5, sticky="nswe")
         self._text_label_1.grid(row=2, column=0, padx=10)
-
-
-TextAnalysisWindow().mainloop()
