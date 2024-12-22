@@ -14,7 +14,7 @@ class TextAnalysisWindow(CTk):
             self._text_Entry.delete(0,len(self._text_Entry.get()))
 
         def quantity_of_words():
-            self._text_quantity.configure(text=f"Количество символов:{len(self._text_Entry.get().split())}")
+            self._text_quantity.configure(text=f"Количество слов:{len(self._text_Entry.get().split())}")
 
         self._title_label = CTkLabel(self, text="АНАЛИЗ ТЕКСТА", font=("TimesNewRoman", 30))
         self._text_Entry = CTkEntry(self, height=10, width=300)
