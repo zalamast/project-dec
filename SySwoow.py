@@ -1,11 +1,11 @@
 """
-Программа для перевода из любой СС в любую другую
+Программа для перевода из любой СС в любую другую (2-36)
 """
-o = int(input("Выбери нужную программу: \n 1 = 10 -> любая;\n 0 = любая -> 10 \n"))
+o = int(input("Выбери нужную программу: \n 1 = 10 -> любая(2-36);\n 0 = любая(2-36) -> 10 \n"))
 if o == 1:
     def dec_to_base(number, base):
         """
-        Перевод из 10чной в любую СС.
+        Перевод из 10чной в любую СС(2-36).
         """
         symbols = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
         if number == 0:
@@ -17,9 +17,9 @@ if o == 1:
         return result
 
     if __name__ == "__main__":
-        print("Перевод из десятичной СС в любую")
+        print("Перевод из десятичной СС в любую(2-36)")
         number = int(input("Введи число в десятичной СС: "))
-        target_base = int(input("Введи СС: "))
+        target_base = int(input("Введи СС(2-36): "))
 
         try:
             result = dec_to_base(number, target_base)
@@ -30,7 +30,7 @@ if o == 1:
 elif o == 0:
     def from_base_to_decimal(number, base):
         """
-        Перевод из любой СС в десятичную.
+        Перевод из любой(2-36) СС в десятичную.
         """
         symbols = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
         number = number.upper()
@@ -45,9 +45,9 @@ elif o == 0:
 
 
     if __name__ == "__main__":
-        print("Из любой в десятичную")
+        print("Из любой(2-36) в десятичную")
         number = input("Введи число: ")
-        source_base = int(input("Введи его СС: "))
+        source_base = int(input("Введи его СС(2-36): "))
 
         try:
             result = from_base_to_decimal(number, source_base)
