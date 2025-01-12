@@ -5,12 +5,15 @@ import re
 import segno
 from customtkinter import *
 
+from utils import center
+
 
 class QRWindow(CTk):
     def __init__(self):
         super().__init__()
         self.title("Regex")
         self.geometry("600x600")
+        center(self)
 
         font = ("Consolas", 14, "normal")
 

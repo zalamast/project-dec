@@ -5,6 +5,8 @@ from tkinter import messagebox
 import autopep8
 from customtkinter import *
 
+from utils import center
+
 
 class AutoPEP8Window(CTk):
     """AutoPEP8 Window"""
@@ -14,6 +16,7 @@ class AutoPEP8Window(CTk):
         super().__init__()
         self.title("AutoPEP8")
         self.geometry("600x600")
+        center(self)
 
         font = ("Consolas", 18, "normal")
 

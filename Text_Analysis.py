@@ -1,11 +1,14 @@
 from customtkinter import *
 
+from utils import center
+
 
 class TextAnalysisWindow(CTk):
     def __init__(self):
         super().__init__()
         self.title("Text Analysis")
         self.geometry("410x400")
+        center(self)
 
         def analiz():
             result = len("".join(self.Textbox.get("0.0", "end").split()))

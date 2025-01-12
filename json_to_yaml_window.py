@@ -6,6 +6,8 @@ from tkinter import messagebox
 import yaml
 from customtkinter import *
 
+from utils import center
+
 
 class JSONToYAMLWindow(CTk):
     """JSON to YAML window"""
@@ -15,6 +17,7 @@ class JSONToYAMLWindow(CTk):
         super().__init__()
         self.title("JSON <-> YAML")
         self.geometry("600x600")
+        center(self)
 
         font = ("Consolas", 18, "normal")
 

@@ -5,6 +5,8 @@ from tkinter import messagebox
 
 from customtkinter import *
 
+from utils import center
+
 
 class RegexWindow(CTk):
     """Regex tester window"""
@@ -14,6 +16,7 @@ class RegexWindow(CTk):
         super().__init__()
         self.title("Regex")
         self.geometry("600x600")
+        center(self)
 
         font = ("Consolas", 14, "normal")
 
