@@ -65,7 +65,7 @@ def start_window():
     root.title("Конвертер СС")
     # Размещение элементов
     frame = ctk.CTkFrame(root)
-    center(root)
+    center(root, 600, 600)
     frame.pack(padx=20, pady=20)
     radiobutton_1 = ctk.CTkRadioButton(frame, text="10 -> Any", variable=radio_var, value=1)
     radiobutton_2 = ctk.CTkRadioButton(frame, text="Any -> 10", variable=radio_var, value=0)

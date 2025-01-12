@@ -16,8 +16,7 @@ class JSONToYAMLWindow(CTk):
         """Create window and UI"""
         super().__init__()
         self.title("JSON <-> YAML")
-        self.geometry("600x600")
-        center(self)
+        center(self, 600, 600)
 
         font = ("Consolas", 18, "normal")
 

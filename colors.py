@@ -2,11 +2,14 @@ from customtkinter import *
 from time import *
 from tkinter.colorchooser import askcolor
 
+from utils import center
+
+
 class ColorsWindow(CTk):
     def __init__(self):
         super().__init__()
         self.title("ColorPeaker")
-        self.geometry("200x260")
+        center(self, 260, 260)
 
         def get_rgb(rgb):
             return "#%02x%02x%02x" % rgb

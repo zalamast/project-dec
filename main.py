@@ -6,6 +6,7 @@ import SySs
 from Text_Analysis import TextAnalysisWindow
 from about_window import AboutWindow
 from autopep8_window import AutoPEP8Window
+from colors import ColorsWindow
 from json_to_yaml_window import JSONToYAMLWindow
 from qr_window import QRWindow
 from regex_window import RegexWindow
@@ -18,8 +19,7 @@ class MainWindow(CTk):
     def __init__(self):
         """Initialize window and setup UI"""
         super().__init__()
-        self.geometry("350x500")
-        center(self)
+        center(self, 350, 500)
         self.title("Oreshnik-Tools")
 
         self.columnconfigure(index=0, weight=1)
@@ -50,7 +50,8 @@ class MainWindow(CTk):
         self._json_conv_btn = CTkButton(self, text="JSON <-> YAML", command=self._open_json_conv)
         self._json_conv_btn.grid(row=7, column=0, **common_style)
 
-
+        self._colors_btn = CTkButton(self, text="Color picker", command=self._open_colors)
+        self._colors_btn.grid(row=8, column=0, **common_style)
 
     def _open_about(self):
         AboutWindow().mainloop()
@@ -72,6 +73,9 @@ class MainWindow(CTk):
 
     def _open_json_conv(self):
         JSONToYAMLWindow().mainloop()
+
+    def _open_colors(self):
+        ColorsWindow().mainloop()
 
 
 def main():

@@ -7,8 +7,7 @@ class AboutWindow(CTk):
     def __init__(self):
         super().__init__()
         self.title("About")
-        self.geometry("400x400")
-        center(self)
+        center(self, 600, 600)
 
         self._title_label = CTkLabel(self, text="About Oreshnik-Tools")
         self._text_label = CTkLabel(self, text="(C) Oreshnik team 2024")
