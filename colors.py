@@ -11,17 +11,17 @@ class ColorsWindow(CTk):
             return "#%02x%02x%02x" % rgb
 
         def color_TB_get():
-            self._label_.configure(bg_color=get_rgb((int(self._TB_1.cget("text"))),(int(self._TB_2.cget("text"))),
-                                                     (int(self._TB_3.cget("text")))))
+            self._label_.configure(bg_color=get_rgb((int(self._TB_1.get("0.0", "end")), int(self._TB_2.get("0.0", "end")),
+                                                    int(self._TB_3.get("0.0", "end")))))
 
 
-        self._label_ = CTkLabel(self, bg_color=get_rgb((255, 255, 255)), text="", width=180, height=150)
+        self._label_ = CTkLabel(self, bg_color=get_rgb((0, 0, 0)), text="", width=180, height=150)
         self._label_1 = CTkLabel(self, text="R", width=20, height=20, font=("TimesNewRoman", 30))
         self._label_2 = CTkLabel(self, text="G", width=20, height=20, font=("TimesNewRoman", 30))
         self._label_3 = CTkLabel(self, text="B", width=20, height=20, font=("TimesNewRoman", 30))
-        self._TB_1 = CTkTextbox(self, width=20, height=20)
-        self._TB_2 = CTkTextbox(self, width=20, height=20)
-        self._TB_3 = CTkTextbox(self, width=20, height=20)
+        self._TB_1 = CTkTextbox(self, width=40, height=20)
+        self._TB_2 = CTkTextbox(self, width=40, height=20)
+        self._TB_3 = CTkTextbox(self, width=40, height=20)
         self._Button = CTkButton(self, width=15, height=40, command=color_TB_get)
 
         self._label_.place(x=5,y =5)
