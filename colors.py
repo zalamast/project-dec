@@ -24,6 +24,12 @@ class ColorsWindow(CTk):
         self._TB_3 = CTkTextbox(self, width=40, height=20)
         self._Button = CTkButton(self, width=15, height=40, command=color_TB_get)
 
+
+
+        self._TB_1.insert("end", "0")
+        self._TB_2.insert("end", "0")
+        self._TB_3.insert("end", "0")
+
         self._label_.place(x=5,y =5)
         self._label_1.place(x=5,y =180)
         self._label_2.place(x=5,y =220)
