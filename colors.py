@@ -11,8 +11,9 @@ class ColorsWindow(CTk):
             return "#%02x%02x%02x" % rgb
 
         def color_TB_get():
-            self._label_.configure(bg_color=get_rgb((int(self._TB_1.get("0.0", "end")), int(self._TB_2.get("0.0", "end")),
-                                                    int(self._TB_3.get("0.0", "end")))))
+            self._label_.configure(bg_color=get_rgb((int(self._TB_1.get("0.0", "end")),
+                                                     int(self._TB_2.get("0.0", "end")),
+                                                     int(self._TB_3.get("0.0", "end")))))
 
 
         self._label_ = CTkLabel(self, bg_color=get_rgb((0, 0, 0)), text="", width=180, height=150)
@@ -22,7 +23,8 @@ class ColorsWindow(CTk):
         self._TB_1 = CTkTextbox(self, width=40, height=20)
         self._TB_2 = CTkTextbox(self, width=40, height=20)
         self._TB_3 = CTkTextbox(self, width=40, height=20)
-        self._Button = CTkButton(self, width=15, height=40, command=color_TB_get)
+        self._Button = CTkButton(self, width=15, height=40, command=color_TB_get, text="Получить цвет",
+                                 font=("TimesNewRoman", 16))
 
 
 
