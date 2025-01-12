@@ -7,6 +7,7 @@ from Text_Analysis import TextAnalysisWindow
 from about_window import AboutWindow
 from autopep8_window import AutoPEP8Window
 from colors import ColorsWindow
+from hashes import Hashes
 from json_to_yaml_window import JSONToYAMLWindow
 from lorem_window import LoremWindow
 from qqidgeneration import uuid4generationWindow
@@ -67,6 +68,9 @@ class MainWindow(CTk):
         self._uuid_btn = CTkButton(self, text="UUID gen", command=self._open_uuid)
         self._uuid_btn.grid(row=10, column=0, **common_style)
 
+        self._uuid_btn = CTkButton(self, text="Hash calc", command=self._open_hashes)
+        self._uuid_btn.grid(row=11, column=0, **common_style)
+
     def _open_about(self):
         AboutWindow().mainloop()
 
@@ -96,6 +100,9 @@ class MainWindow(CTk):
 
     def _open_uuid(self):
         uuid4generationWindow().mainloop()
+
+    def _open_hashes(self):
+        Hashes().mainloop()
 
 
 def main():
