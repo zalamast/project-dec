@@ -5,6 +5,7 @@ from customtkinter import *
 import SySs
 from Text_Analysis import TextAnalysisWindow
 from about_window import AboutWindow
+from autopep8_window import AutoPEP8Window
 from qr_window import QRWindow
 from regex_window import RegexWindow
 
@@ -36,6 +37,9 @@ class MainWindow(CTk):
         self._qr_btn = CTkButton(self, text="QR gen", command=self._open_qr_gen)
         self._qr_btn.grid(row=5, column=0)
 
+        self._pep8_btn = CTkButton(self, text="Auto PEP8", command=self._open_autopep8)
+        self._pep8_btn.grid(row=6, column=0)
+
     def _open_about(self):
         AboutWindow().mainloop()
 
@@ -51,6 +55,8 @@ class MainWindow(CTk):
     def _open_qr_gen(self):
         QRWindow().mainloop()
 
+    def _open_autopep8(self):
+        AutoPEP8Window().mainloop()
 
 def main():
     """Main function"""
