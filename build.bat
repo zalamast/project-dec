@@ -5,4 +5,5 @@ pyinstaller ^
     --hiddenimport tkkthemes ^
     --clean ^
     --name oreshnik ^
+    --noconsole ^
     main.py
