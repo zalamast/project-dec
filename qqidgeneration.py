@@ -1,12 +1,5 @@
 """nfiviiibv"""
-import json
-import re
-from collections.abc import generator
-from operator import length_hint
-from tkinter import messagebox
-
 import uuid
-from uuid import uuid1, uuid4
 
 from customtkinter import *
 

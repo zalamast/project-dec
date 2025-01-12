@@ -9,6 +9,7 @@ from autopep8_window import AutoPEP8Window
 from colors import ColorsWindow
 from json_to_yaml_window import JSONToYAMLWindow
 from lorem_window import LoremWindow
+from qqidgeneration import uuid4generationWindow
 from qr_window import QRWindow
 from regex_window import RegexWindow
 from utils import center
@@ -63,6 +64,9 @@ class MainWindow(CTk):
         self._lorem_btn = CTkButton(self, text="Lorem ipsum", command=self._open_lorem)
         self._lorem_btn.grid(row=9, column=0, **common_style)
 
+        self._uuid_btn = CTkButton(self, text="UUID gen", command=self._open_uuid)
+        self._uuid_btn.grid(row=10, column=0, **common_style)
+
     def _open_about(self):
         AboutWindow().mainloop()
 
@@ -89,6 +93,9 @@ class MainWindow(CTk):
 
     def _open_lorem(self):
         LoremWindow().mainloop()
+
+    def _open_uuid(self):
+        uuid4generationWindow().mainloop()
 
 
 def main():
