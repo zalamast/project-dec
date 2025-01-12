@@ -17,9 +17,11 @@ class QRWindow(CTk):
         font = ("Consolas", 14, "normal")
 
         self.text_field = CTkEntry(self)
-        self.btn = CTkButton(self, text="НАЖМИТЕ ДЛЯ ГЕНЕРАЦИИ QRcode", command=self.click_button)
-        self.text_field.pack(fill = "x")
-        self.btn.pack(fill = "x")
+        self.btn = CTkButton(
+            self, text="НАЖМИТЕ ДЛЯ ГЕНЕРАЦИИ QRcode", command=self.click_button
+        )
+        self.text_field.pack(fill="x")
+        self.btn.pack(fill="x")
 
     def click_button(self):
         path = filedialog.asksaveasfilename(defaultextension="png")

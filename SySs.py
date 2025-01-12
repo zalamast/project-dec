@@ -17,6 +17,7 @@ def dec_to_base(number, base):
         number //= base
     return result
 
+
 def from_base_to_decimal(number, base):
     """
     Перевод из любой(2-36) СС в десятичную.
@@ -28,9 +29,10 @@ def from_base_to_decimal(number, base):
     for index, digit in enumerate(reversed(number)):
         if digit not in symbols[:base]:
             raise ValueError(f"Неверное число '{digit}' для {base} СС")
-        decimal_value += symbols.index(digit) * (base ** index)
+        decimal_value += symbols.index(digit) * (base**index)
 
     return decimal_value
+
 
 def convert():
     try:
@@ -40,7 +42,9 @@ def convert():
             number = int(number_input.get())
             target_base = int(base_input.get())
             result = dec_to_base(number, target_base)
-            result_label.configure(text=f"Результат: {result} (в {target_base}-й системе)")
+            result_label.configure(
+                text=f"Результат: {result} (в {target_base}-й системе)"
+            )
         elif o == 0:
             # Перевод из любой(2-36) -> 10
             number = number_input.get()
@@ -67,8 +71,12 @@ def start_window():
     frame = ctk.CTkFrame(root)
     center(root, 600, 600)
     frame.pack(padx=20, pady=20)
-    radiobutton_1 = ctk.CTkRadioButton(frame, text="10 -> Any", variable=radio_var, value=1)
-    radiobutton_2 = ctk.CTkRadioButton(frame, text="Any -> 10", variable=radio_var, value=0)
+    radiobutton_1 = ctk.CTkRadioButton(
+        frame, text="10 -> Any", variable=radio_var, value=1
+    )
+    radiobutton_2 = ctk.CTkRadioButton(
+        frame, text="Any -> 10", variable=radio_var, value=0
+    )
     radiobutton_1.grid(row=0, column=0, padx=10, pady=5)
     radiobutton_2.grid(row=0, column=1, padx=10, pady=5)
     # Поле для выбора программы (0 или 1)
@@ -83,7 +91,9 @@ def start_window():
     number_input = ctk.CTkEntry(frame)
     number_input.grid(row=1, column=1, padx=10, pady=5)
     # Поле для ввода основания СС
-    base_input_label = ctk.CTkLabel(frame, text="Введите основание системы счисления (2-36):")
+    base_input_label = ctk.CTkLabel(
+        frame, text="Введите основание системы счисления (2-36):"
+    )
     base_input_label.grid(row=2, column=0, padx=10, pady=5)
     base_input = ctk.CTkEntry(frame)
     base_input.grid(row=2, column=1, padx=10, pady=5)
@@ -97,5 +107,5 @@ def start_window():
     root.mainloop()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     start_window()

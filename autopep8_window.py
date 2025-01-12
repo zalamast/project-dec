@@ -1,4 +1,5 @@
 """AutoPEP8 Window"""
+
 import json
 from tkinter import messagebox
 
@@ -19,15 +20,8 @@ class AutoPEP8Window(CTk):
 
         font = ("Consolas", 18, "normal")
 
-        self._code_box = CTkTextbox(
-            self,
-            font=font
-        )
-        self._format_button = CTkButton(
-            self,
-            text="Format code",
-            command=self._format
-        )
+        self._code_box = CTkTextbox(self, font=font)
+        self._format_button = CTkButton(self, text="Format code", command=self._format)
 
         self.rowconfigure(index=1, weight=1)
         self.rowconfigure(index=0, weight=14)

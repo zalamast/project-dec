@@ -39,7 +39,9 @@ class MainWindow(CTk):
         self._text_btn = CTkButton(self, text="Text_analys", command=self._open_text)
         self._text_btn.grid(row=3, column=0, **common_style)
 
-        self._trans_btn = CTkButton(self, text="any base to any base", command=self._open_transSS)
+        self._trans_btn = CTkButton(
+            self, text="any base to any base", command=self._open_transSS
+        )
         self._trans_btn.grid(row=4, column=0, **common_style)
 
         self._qr_btn = CTkButton(self, text="QR gen", command=self._open_qr_gen)
@@ -48,10 +50,14 @@ class MainWindow(CTk):
         self._pep8_btn = CTkButton(self, text="Auto PEP8", command=self._open_autopep8)
         self._pep8_btn.grid(row=6, column=0, **common_style)
 
-        self._json_conv_btn = CTkButton(self, text="JSON <-> YAML", command=self._open_json_conv)
+        self._json_conv_btn = CTkButton(
+            self, text="JSON <-> YAML", command=self._open_json_conv
+        )
         self._json_conv_btn.grid(row=7, column=0, **common_style)
 
-        self._colors_btn = CTkButton(self, text="Color picker", command=self._open_colors)
+        self._colors_btn = CTkButton(
+            self, text="Color picker", command=self._open_colors
+        )
         self._colors_btn.grid(row=8, column=0, **common_style)
 
         self._lorem_btn = CTkButton(self, text="Lorem ipsum", command=self._open_lorem)
@@ -91,5 +97,5 @@ def main():
     app.mainloop()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

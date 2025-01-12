@@ -19,20 +19,12 @@ class RegexWindow(CTk):
 
         font = ("Consolas", 14, "normal")
 
-        self._regex_box = CTkTextbox(
-            self, font=font
-        )
+        self._regex_box = CTkTextbox(self, font=font)
         self._regex_box.insert("end", "Enter regex")
-        self._text_box = CTkTextbox(
-            self, font=font
-        )
+        self._text_box = CTkTextbox(self, font=font)
         self._text_box.insert("end", "Enter text")
-        self._match_box = CTkTextbox(
-            self, state="disabled", font=font
-        )
-        self._match_btn = CTkButton(
-            self, text="Match!", command=self._match
-        )
+        self._match_box = CTkTextbox(self, state="disabled", font=font)
+        self._match_btn = CTkButton(self, text="Match!", command=self._match)
 
         self.rowconfigure(index=0, weight=3)
         self.rowconfigure(index=1, weight=1)
@@ -52,16 +44,11 @@ class RegexWindow(CTk):
         except re.error as error:
             messagebox.showerror("Error", str(error))
             return
-        matches = pattern.findall(
-            self._text_box.get("0.0", "end")
-        )
+        matches = pattern.findall(self._text_box.get("0.0", "end"))
         self._match_box.configure(state="normal")
         self._match_box.delete("0.0", "end")
         for match in matches:
-            self._match_box.insert(
-                "end",
-                str(match) + "\n--\n"
-            )
+            self._match_box.insert("end", str(match) + "\n--\n")
         self._match_box.configure(state="disabled")
 
 

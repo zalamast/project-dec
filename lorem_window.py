@@ -1,4 +1,5 @@
 """AutoPEP8 Window"""
+
 import json
 from tkinter import messagebox
 
@@ -20,14 +21,9 @@ class LoremWindow(CTk):
 
         font = ("Consolas", 18, "normal")
 
-        self._code_box = CTkTextbox(
-            self,
-            font=font
-        )
+        self._code_box = CTkTextbox(self, font=font)
         self._format_button = CTkButton(
-            self,
-            text="Generate lorem text",
-            command=self._format
+            self, text="Generate lorem text", command=self._format
         )
 
         self.rowconfigure(index=1, weight=1)
