@@ -22,8 +22,6 @@ class ColorsWindow(CTk):
         self._Button = CTkButton(self, width=15, height=40, command=change_color, text="Открыть colorpeaker",
                                  font=("TimesNewRoman", 16))
 
-        #self._TB_1.insert("end", "0")
-
         self._label_.place(x=5,y =5)
         self._TB_1.place(x=5,y =170)
         self._Button.place(x=5,y=210)
