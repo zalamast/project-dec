@@ -1,2 +1,5 @@
 customtkinter
 pyyaml
+autopep8
+segno
+lorem

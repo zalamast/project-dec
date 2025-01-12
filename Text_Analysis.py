@@ -1,28 +1,49 @@
 from customtkinter import *
 
+from utils import center
+
 
 class TextAnalysisWindow(CTk):
     def __init__(self):
         super().__init__()
         self.title("Text Analysis")
-        self.geometry("410x400")
+        center(self, 410, 400)
 
         def analiz():
             result = len("".join(self.Textbox.get("0.0", "end").split()))
             self._text_label_1.configure(text=f"Количество символов:{result}")
-            self._text_quantity.configure(text=f"Количество слов:"
-                                               f"{len(self.Textbox.get("0.0", "end").split())}")
+            self._text_quantity.configure(
+                text=f"Количество слов:{len(self.Textbox.get('0.0', 'end').split())}"
+            )
+
         def delete():
             self.Textbox.delete("0.0", "end")
 
-        self._title_label = CTkLabel(self, text="АНАЛИЗ ТЕКСТА", font=("TimesNewRoman", 45))
+        self._title_label = CTkLabel(
+            self, text="АНАЛИЗ ТЕКСТА", font=("TimesNewRoman", 45)
+        )
         self.Textbox = CTkTextbox(self, height=10, width=300)
-        self._text_label_1 = CTkLabel(self, text="Количество символов:", font=("TimesNewRoman", 30))
-        self._button_analiz = CTkButton(self, text="ПРОВЕСТИ АНАЛИЗ", command=analiz,
-        width=40, height=50, font=("TimesNewRoman", 30))
-        self._button_delete = CTkButton(self, text="ОЧИСТИТЬ СТРОКУ", font=("TimesNewRoman", 30),
-        command=delete, height=50)
-        self._text_quantity = CTkLabel(self, text="Количество слов:", font=("TimesNewRoman", 30))
+        self._text_label_1 = CTkLabel(
+            self, text="Количество символов:", font=("TimesNewRoman", 30)
+        )
+        self._button_analiz = CTkButton(
+            self,
+            text="ПРОВЕСТИ АНАЛИЗ",
+            command=analiz,
+            width=40,
+            height=50,
+            font=("TimesNewRoman", 30),
+        )
+        self._button_delete = CTkButton(
+            self,
+            text="ОЧИСТИТЬ СТРОКУ",
+            font=("TimesNewRoman", 30),
+            command=delete,
+            height=50,
+        )
+        self._text_quantity = CTkLabel(
+            self, text="Количество слов:", font=("TimesNewRoman", 30)
+        )
 
         self.rowconfigure(index=0, weight=1)
         self.rowconfigure(index=1, weight=10)
@@ -32,7 +53,6 @@ class TextAnalysisWindow(CTk):
         self.rowconfigure(index=5, weight=1)
         self.rowconfigure(index=6, weight=1)
         self.columnconfigure(index=0, weight=1)
-
 
         self._text_quantity.grid(row=3)
         self._button_delete.grid(row=6, column=0, sticky="ns")
